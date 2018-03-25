@@ -2,8 +2,7 @@
  * 全局变量通用文件
  */
 (function (global, undefined) {
-  if (global.GBFL) return
-
+  console.log('hhhhhhhhhhhhhhhhh')
   var GBFL = global.GBFL = {
     version: '4.0.0',
     MSG: {}
@@ -41,5 +40,20 @@
     clear: function () {
       global.localStorage.clear()
     }
-  };
+  }
+  GBFL.Util = {
+    deepCopy: function (source) {
+      var result = {}
+      for (var key in source) {
+        if (source[key]) {
+          result[key] = typeof source[key] === 'object' ? deepCopy(source[key]) : source[key];
+        } else if (source[key] === false) {
+          result[key] = false
+        } else {
+          result[key] = ''
+        }
+      }
+      return result
+    }
+  }
 })(window)

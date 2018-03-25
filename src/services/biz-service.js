@@ -6,10 +6,10 @@ export default class BizService {
       // 用户管理
       getUserList: '/user/pagelist',
       // 公共编码管理
-      getDepartmentTypeList: ' /code/departmenttype/pagelist',
-      addDepartmentType: ' /code/departmenttype/add',
-      deleteDepartmentType: ' /code/departmenttype/delete',
-      updateDepartmentType: ' /code/departmenttype/update'
+      getDepartmentTypeList: '/code/departmenttype/pagelist',
+      addDepartmentType: '/code/departmenttype/add',
+      deleteDepartmentType: '/code/departmenttype/delete',
+      updateDepartmentType: '/code/departmenttype/update'
     }
   }
   ajaxRequest (url, sendData, type, callback, contentType, async, beforeSend) {

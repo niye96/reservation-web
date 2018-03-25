@@ -46,7 +46,7 @@
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
-      :current-page="filter.currentPage"
+      :current-page="filter.pageNo"
       :page-sizes="[5, 10, 15]"
       :page-size="filter.pageSize"
       layout="total, sizes, prev, pager, next, jumper"
@@ -66,7 +66,7 @@ export default {
       filter: {
         userName: null,
         pageSize: 10,
-        currentPage: 1
+        pageNo: 1
       }
     }
   },
@@ -89,11 +89,11 @@ export default {
       })
     },
     handleSizeChange (val) {
-      this.pageSize = val
+      this.filter.pageSize = val
       this.initPage()
     },
     handleCurrentChange (val) {
-      this.currentPage = val
+      this.filter.pageNo = val
       this.initPage()
     },
     formatSex (val) {
